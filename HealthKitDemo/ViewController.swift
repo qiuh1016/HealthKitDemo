@@ -11,6 +11,7 @@ import HealthKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var label: UILabel!
     var healthStore = HKHealthStore()
 
     override func viewDidLoad() {
@@ -44,11 +45,7 @@ class ViewController: UIViewController {
             }
 
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        label.text = "读取中..."
     }
     
     func readStepCount() {
@@ -57,7 +54,6 @@ class ViewController: UIViewController {
         let end = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
         
         let sampleQuery = HKSampleQuery(sampleType: sampleType!, predicate: predicateForSamplesToday(), limit: HKObjectQueryNoLimit, sortDescriptors: [start, end]) { (query, results, error) in
-            print("result count: \(results?.count), result: \(results)")
 
             var stepCount: Double = 0.0
             for result in results! {
@@ -67,6 +63,11 @@ class ViewController: UIViewController {
             }
             
             print("new step count: \(stepCount)")
+            let todayStepCount = Int(stepCount)
+            
+            OperationQueue.main.addOperation({
+                self.label.text = "今天的步数：\(todayStepCount)"
+            })
         }
         
         self.healthStore.execute(sampleQuery)
@@ -87,6 +88,7 @@ class ViewController: UIViewController {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
         return predicate
     }
+    
 
 }
 
