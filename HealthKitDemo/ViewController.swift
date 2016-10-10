@@ -19,23 +19,7 @@ class ViewController: UIViewController {
         if !HKHealthStore.isHealthDataAvailable() {
             print("设备不支持healthKit")
         } else {
-            // 1. Set the types you want to read from HK Store
-            let healthKitTypesToRead = Set(arrayLiteral: HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
-                                           HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.bloodType)!,
-                                           HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.biologicalSex)!,
-                                           HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!,
-                                           HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
-                                           HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
-                                           HKObjectType.workoutType())
-            
-            // 2. Set the types you want to write to HK Store
-            let healthKitTypesToWrite = Set(arrayLiteral:
-                HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMassIndex)!,
-                                            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
-                                            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
-                                            HKQuantityType.workoutType())
-            // 4.  Request HealthKit authorization
-            HKHealthStore().requestAuthorization(toShare: healthKitTypesToWrite, read: healthKitTypesToRead) { (success, error) -> Void in
+            HealthManager().authorizeHealthKit() { (success, error) -> Void in
                 if success {
                     print("success")
                     self.readStepCount()
@@ -72,6 +56,33 @@ class ViewController: UIViewController {
         
         self.healthStore.execute(sampleQuery)
     }
+    
+    func saveStepCount(stepQuantity: HKQuantity, completion: ((_ success: Bool, _ error: Error?) -> Void)!) {
+        let calender = Calendar.current
+        let now = Date()
+        
+        let dateComponents = calender.dateComponents([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day, Calendar.Component.hour, Calendar.Component.minute, Calendar.Component.second], from: now)
+        
+        
+        let startDate = calender.date(from: dateComponents)
+        let endDate = calender.date(byAdding: Calendar.Component.minute, value: 1, to: startDate!)
+        
+        let stepSamples = HKQuantitySample(type: HKQuantityType.quantityType(forIdentifier: .stepCount)!, quantity: stepQuantity, start: startDate!, end: endDate!)
+        let workOut = HKWorkout(activityType: .walking, start: startDate!, end: endDate!)
+        healthStore.save(workOut, withCompletion: { success, error in
+            if success {
+                self.healthStore.add([stepSamples], to: workOut) { (success, error) in
+                    completion(success, error)
+                }
+            } else {
+                print(error)
+            }
+        })
+        
+        
+        
+        
+    }
 
     func predicateForSamplesToday() -> NSPredicate {
         let calender = Calendar.current
@@ -89,6 +100,20 @@ class ViewController: UIViewController {
         return predicate
     }
     
+    @IBAction func buttonTapped(_ sender: AnyObject) {
+        self.readStepCount()
+    }
+    @IBAction func addButtonTapped(_ sender: AnyObject) {
+        let quantity = HKQuantity(unit: HKUnit.count(), doubleValue: 1000.0)
+        saveStepCount(stepQuantity: quantity) { success, error in
+            if (success) {
+                print("add success")
+            } else {
+                print(error)
+            }
+            self.readStepCount()
+        }
+    }
 
 }
 

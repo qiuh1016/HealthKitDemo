@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,15 +19,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBK-UQ-x9i">
-                                <frame key="frameInset" minX="16" minY="28" width="195" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBK-UQ-x9i">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzP-IJ-ezy">
+                                <color key="backgroundColor" red="0.0" green="0.37647058820000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="获取">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gQH-43-ElP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxO-dK-ISp">
+                                <color key="backgroundColor" red="0.0" green="0.37647058820000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sX7-Bg-hLQ"/>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nei-En-Tvk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gBK-UQ-x9i" firstAttribute="leading" secondItem="BzP-IJ-ezy" secondAttribute="leading" id="0J3-Xi-yfa"/>
+                            <constraint firstItem="gBK-UQ-x9i" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GGo-Md-oRW"/>
+                            <constraint firstItem="gBK-UQ-x9i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JqU-QA-Wx7"/>
+                            <constraint firstItem="gBK-UQ-x9i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Lrp-2v-X1F"/>
+                            <constraint firstItem="lxO-dK-ISp" firstAttribute="trailing" secondItem="BzP-IJ-ezy" secondAttribute="trailing" id="SLr-pz-oiY"/>
+                            <constraint firstItem="gBK-UQ-x9i" firstAttribute="trailing" secondItem="BzP-IJ-ezy" secondAttribute="trailing" id="Ut7-Pc-M2N"/>
+                            <constraint firstAttribute="bottom" secondItem="BzP-IJ-ezy" secondAttribute="bottom" constant="20" symbolic="YES" id="aKs-GP-T3b"/>
+                            <constraint firstItem="BzP-IJ-ezy" firstAttribute="top" secondItem="lxO-dK-ISp" secondAttribute="bottom" constant="8" symbolic="YES" id="oCR-Vz-wf6"/>
+                            <constraint firstItem="lxO-dK-ISp" firstAttribute="leading" secondItem="BzP-IJ-ezy" secondAttribute="leading" id="rfm-f9-Zai"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="gBK-UQ-x9i" id="BY0-O4-aTs"/>

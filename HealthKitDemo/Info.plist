@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSHealthShareUsageDescription</key>
-	<string>请允许本app进行健康数据读取-share</string>
-	<key>NSHealthUpdateUsageDescription</key>
 	<string>请允许本app进行健康数据读取</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>请允许本app进行健康数据写入</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleExecutable</key>
