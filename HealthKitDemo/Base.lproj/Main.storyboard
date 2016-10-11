@@ -70,7 +70,7 @@
             </objects>
             <point key="canvasLocation" x="-1465" y="837"/>
         </scene>
-        <!--Gas View Controller-->
+        <!--Add-->
         <scene sceneID="pCR-T8-3vF">
             <objects>
                 <viewController id="xfD-Xr-Y9A" customClass="GasViewController" customModule="HealthKitDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,7 +142,7 @@
                             <constraint firstItem="RW3-0g-edD" firstAttribute="centerX" secondItem="1dA-Tf-S6U" secondAttribute="centerX" id="pS1-QN-VHp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Q4b-em-Yd0"/>
+                    <navigationItem key="navigationItem" title="Add" id="Q4b-em-Yd0"/>
                     <connections>
                         <outlet property="label" destination="gTR-nb-Jl9" id="I7i-2T-zuQ"/>
                         <outlet property="wheelImage" destination="RW3-0g-edD" id="mbN-n2-8he"/>
@@ -157,7 +157,7 @@
             </objects>
             <point key="canvasLocation" x="-527.20000000000005" y="144.3778110944528"/>
         </scene>
-        <!--Record Table View Controller-->
+        <!--Records-->
         <scene sceneID="8cV-of-N9n">
             <objects>
                 <tableViewController id="piG-3d-eHw" customClass="RecordTableViewController" customModule="HealthKitDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -191,7 +191,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="sg0-fT-vmR" secondAttribute="bottom" constant="3" id="JAS-oJ-hfZ"/>
                                         <constraint firstItem="sg0-fT-vmR" firstAttribute="leading" secondItem="WB9-C9-vmn" secondAttribute="trailing" constant="20" id="OyT-Z4-MQz"/>
                                         <constraint firstItem="sg0-fT-vmR" firstAttribute="top" secondItem="qBm-zs-k8v" secondAttribute="topMargin" constant="3" id="opi-av-3m0"/>
-                                        <constraint firstItem="WB9-C9-vmn" firstAttribute="leading" secondItem="qBm-zs-k8v" secondAttribute="leadingMargin" id="vn5-MF-yt0"/>
+                                        <constraint firstItem="WB9-C9-vmn" firstAttribute="leading" secondItem="qBm-zs-k8v" secondAttribute="leadingMargin" constant="10" id="vn5-MF-yt0"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -201,6 +201,7 @@
                             <outlet property="delegate" destination="piG-3d-eHw" id="CvV-nB-Sfx"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Records" id="bSq-aI-Ikx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ra4-R9-HyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

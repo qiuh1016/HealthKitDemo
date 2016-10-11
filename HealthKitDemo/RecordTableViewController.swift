@@ -16,6 +16,8 @@ class RecordTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.tableFooterView = UIView()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,7 +35,7 @@ class RecordTableViewController: UITableViewController {
         return appDelegate.persistentContainer.viewContext
     }
     
-    func getPerson() -> [NSManagedObject]? {
+    func getRecords() -> [NSManagedObject]? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Record")
         do {
             searchResults = try getContext().fetch(fetchRequest) as? [NSManagedObject]
@@ -54,7 +56,7 @@ class RecordTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if let result = getPerson() {
+        if let result = getRecords() {
             return result.count
         } else {
             return 0

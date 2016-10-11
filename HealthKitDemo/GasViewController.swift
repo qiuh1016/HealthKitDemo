@@ -30,7 +30,8 @@ class GasViewController: UIViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: AnyObject) {
-       storePerson(price: Double(wheelRotation / rotationLimited * 100), date: Date(), category: 0)
+        storePerson(price: Double(wheelRotation / rotationLimited * 100), date: Date(), category: 0)
+        print(Date().description)
     }
     
     func imageOperation() {
