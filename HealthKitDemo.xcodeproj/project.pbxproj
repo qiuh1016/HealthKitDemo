@@ -14,6 +14,7 @@
 		B9B22EF91DAA191300895309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B22EF71DAA191300895309 /* LaunchScreen.storyboard */; };
 		B9B22F051DAA1CE000895309 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B22F041DAA1CE000895309 /* HealthManager.swift */; };
 		B9B22F091DAA2ECF00895309 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B22F081DAA2ECF00895309 /* HealthKit.framework */; };
+		B9C57D621DACBBA200B39885 /* GasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C57D611DACBBA200B39885 /* GasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B9B22F001DAA193E00895309 /* HealthKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitDemo.entitlements; sourceTree = "<group>"; };
 		B9B22F041DAA1CE000895309 /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		B9B22F081DAA2ECF00895309 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B9C57D611DACBBA200B39885 /* GasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				B9B22F001DAA193E00895309 /* HealthKitDemo.entitlements */,
 				B9B22EEE1DAA191300895309 /* AppDelegate.swift */,
 				B9B22EF01DAA191300895309 /* ViewController.swift */,
+				B9C57D611DACBBA200B39885 /* GasViewController.swift */,
 				B9B22EF21DAA191300895309 /* Main.storyboard */,
 				B9B22F041DAA1CE000895309 /* HealthManager.swift */,
 				B9B22EF51DAA191300895309 /* Assets.xcassets */,
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9C57D621DACBBA200B39885 /* GasViewController.swift in Sources */,
 				B9B22EF11DAA191300895309 /* ViewController.swift in Sources */,
 				B9B22F051DAA1CE000895309 /* HealthManager.swift in Sources */,
 				B9B22EEF1DAA191300895309 /* AppDelegate.swift in Sources */,

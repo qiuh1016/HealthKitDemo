@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xfD-Xr-Y9A">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -62,8 +62,102 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="dwV-5f-e2C">
+                    <connections>
+                        <action selector="panned:" destination="BYZ-38-t0r" id="IB7-lp-fdQ"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="28" y="146"/>
+        </scene>
+        <!--Gas View Controller-->
+        <scene sceneID="pCR-T8-3vF">
+            <objects>
+                <viewController id="xfD-Xr-Y9A" customClass="GasViewController" customModule="HealthKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mx1-QH-F6p"/>
+                        <viewControllerLayoutGuide type="bottom" id="JTp-bX-xdo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1dA-Tf-S6U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTR-nb-Jl9">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwR-4M-Su8">
+                                <color key="backgroundColor" red="0.0" green="0.37647058820000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="获取">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="xfD-Xr-Y9A" eventType="touchUpInside" id="bWB-La-XcG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkO-3Q-1CF">
+                                <color key="backgroundColor" red="0.0" green="0.37647058820000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="xfD-Xr-Y9A" eventType="touchUpInside" id="mrO-LN-TEO"/>
+                                    <action selector="buttonTapped:" destination="xfD-Xr-Y9A" eventType="touchUpInside" id="MVo-2B-OVH"/>
+                                </connections>
+                            </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval 12" translatesAutoresizingMaskIntoConstraints="NO" id="YVl-H8-FoB">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="498-ek-sry"/>
+                                    <constraint firstAttribute="height" constant="300" id="lmb-nG-Gkn"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval 121" translatesAutoresizingMaskIntoConstraints="NO" id="RW3-0g-edD">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="NPy-WO-TGs"/>
+                                    <constraint firstAttribute="width" constant="300" id="RiF-gZ-fIH"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rLg-Ce-4pQ" appends="YES" id="AnC-Cf-CCG"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gTR-nb-Jl9" firstAttribute="top" secondItem="mx1-QH-F6p" secondAttribute="bottom" constant="20" id="1Yx-gQ-PMo"/>
+                            <constraint firstItem="UwR-4M-Su8" firstAttribute="top" secondItem="zkO-3Q-1CF" secondAttribute="bottom" constant="8" symbolic="YES" id="3yf-Sw-5Zc"/>
+                            <constraint firstItem="gTR-nb-Jl9" firstAttribute="leading" secondItem="1dA-Tf-S6U" secondAttribute="leadingMargin" id="4ST-iK-ci7"/>
+                            <constraint firstItem="zkO-3Q-1CF" firstAttribute="leading" secondItem="UwR-4M-Su8" secondAttribute="leading" id="7Ng-K9-x0m"/>
+                            <constraint firstItem="zkO-3Q-1CF" firstAttribute="trailing" secondItem="UwR-4M-Su8" secondAttribute="trailing" id="BKH-lV-amQ"/>
+                            <constraint firstItem="YVl-H8-FoB" firstAttribute="centerX" secondItem="1dA-Tf-S6U" secondAttribute="centerX" id="Cal-dV-ScD"/>
+                            <constraint firstAttribute="bottom" secondItem="UwR-4M-Su8" secondAttribute="bottom" constant="20" symbolic="YES" id="GvB-gX-QoP"/>
+                            <constraint firstItem="RW3-0g-edD" firstAttribute="centerY" secondItem="1dA-Tf-S6U" secondAttribute="centerY" id="T0a-2b-axA"/>
+                            <constraint firstItem="YVl-H8-FoB" firstAttribute="centerY" secondItem="1dA-Tf-S6U" secondAttribute="centerY" id="YTK-GV-xnq"/>
+                            <constraint firstItem="gTR-nb-Jl9" firstAttribute="trailing" secondItem="UwR-4M-Su8" secondAttribute="trailing" id="iSf-iX-8fj"/>
+                            <constraint firstItem="gTR-nb-Jl9" firstAttribute="trailing" secondItem="1dA-Tf-S6U" secondAttribute="trailingMargin" id="iXD-hl-sbc"/>
+                            <constraint firstItem="gTR-nb-Jl9" firstAttribute="leading" secondItem="UwR-4M-Su8" secondAttribute="leading" id="lkw-Um-K8q"/>
+                            <constraint firstItem="RW3-0g-edD" firstAttribute="centerX" secondItem="1dA-Tf-S6U" secondAttribute="centerX" id="pS1-QN-VHp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="gTR-nb-Jl9" id="I7i-2T-zuQ"/>
+                        <outlet property="wheelImage" destination="RW3-0g-edD" id="mbN-n2-8he"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qdc-x9-W83" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="rLg-Ce-4pQ">
+                    <connections>
+                        <action selector="panned:" destination="xfD-Xr-Y9A" id="nai-m8-cXq"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-807" y="145"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Oval 12" width="401" height="401"/>
+        <image name="Oval 121" width="401" height="401"/>
+    </resources>
 </document>

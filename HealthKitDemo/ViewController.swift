@@ -12,6 +12,7 @@ import HealthKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
+    
     var healthStore = HKHealthStore()
 
     override func viewDidLoad() {
@@ -102,7 +103,9 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTapped(_ sender: AnyObject) {
         self.readStepCount()
+        
     }
+    
     @IBAction func addButtonTapped(_ sender: AnyObject) {
         let quantity = HKQuantity(unit: HKUnit.count(), doubleValue: 1000.0)
         saveStepCount(stepQuantity: quantity) { success, error in
@@ -114,6 +117,8 @@ class ViewController: UIViewController {
             self.readStepCount()
         }
     }
+    
+    
 
 }
 
