@@ -9,18 +9,27 @@
 import UIKit
 import CoreData
 
+let kTotalGas: Double = 63.0
+
+
 class GasViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var wheelImage: UIImageView!
+    
+    @IBOutlet weak var mileageTextField: UITextField!
+    @IBOutlet weak var unitPriceTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
     
     var wheelRotation: CGFloat = 0.0
     var rotationLimited: CGFloat = 2 * CGFloat(M_PI) * 240 / 360
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = "0%"
         self.wheelImage.transform = self.wheelImage!.transform.rotated(by: -rotationLimited / 2)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(GasViewController.closeKeyboard))
+        self.view.addGestureRecognizer(tap)
     }
     
     
@@ -30,7 +39,7 @@ class GasViewController: UIViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: AnyObject) {
-        storePerson(price: Double(wheelRotation / rotationLimited * 100), date: Date(), category: 0)
+        storePerson(price: Double(priceTextField.text!)!, date: Date(), category: 0, unitPrice: Double(unitPriceTextField.text!)!, mileage: Int(mileageTextField.text!)!, restGas: Double(wheelRotation / rotationLimited))
         print(Date().description)
     }
     
@@ -51,6 +60,7 @@ class GasViewController: UIViewController {
         let panGesture = sender as! UIPanGestureRecognizer
         let velocity = panGesture.velocity(in: wheelImage)
         let rotation = CGFloat(M_PI / 360 / 20) * velocity.x
+        
         if wheelRotation + rotation > 0 && wheelRotation + rotation < rotationLimited  {
             self.wheelImage.transform = self.wheelImage!.transform.rotated(by: rotation)
             self.wheelRotation += rotation
@@ -67,7 +77,7 @@ class GasViewController: UIViewController {
         return appDelegate.persistentContainer.viewContext
     }
     
-    func storePerson(price: Double, date: Date, category: Int){
+    func storePerson(price: Double, date: Date, category: Int, unitPrice: Double, mileage: Int, restGas: Double){
         let context = getContext()
         // 定义一个entity，这个entity一定要在xcdatamodeld中做好定义
         let entity = NSEntityDescription.entity(forEntityName: "Record", in: context)
@@ -77,6 +87,9 @@ class GasViewController: UIViewController {
         record.setValue(price, forKey: "price")
         record.setValue(date, forKey: "date")
         record.setValue(category, forKey: "category")
+        record.setValue(unitPrice, forKey: "unitPrice")
+        record.setValue(mileage, forKey: "mileage")
+        record.setValue(restGas, forKey: "restGas")
         
         do {
             try context.save()
@@ -84,6 +97,12 @@ class GasViewController: UIViewController {
         }catch{
             print(error)
         }
+    }
+    
+    func closeKeyboard() {
+        mileageTextField.resignFirstResponder()
+        unitPriceTextField.resignFirstResponder()
+        priceTextField.resignFirstResponder()
     }
     
     

@@ -68,15 +68,58 @@ class RecordTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let priceLabel = cell.viewWithTag(1000) as! UILabel
         let dateLabel = cell.viewWithTag(1001) as! UILabel
-        priceLabel.text = "\(searchResults![indexPath.row].value(forKey: "price")!)"
-        dateLabel.text = "\(searchResults![indexPath.row].value(forKey: "date")!)"
-        // Configure the cell...
+        let mileageLabel = cell.viewWithTag(1002) as! UILabel
+        let gasAddLabel = cell.viewWithTag(1003) as! UILabel
+        
+        let record = searchResults![searchResults!.count - 1 - indexPath.row]
+        
+        
+        let price = record.value(forKey: "price") as! Double
+        priceLabel.text = "\(String(format: "%.0f", price))元"
+        
+        let date = record.value(forKey: "date") as! Date
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let dateString = formatter.string(from: date)
+        dateLabel.text = "\(dateString)"
+        
+        let mileage = record.value(forKey: "mileage") as! Int
+        mileageLabel.text = "\(mileage)km"
+        
+        let restGas = kTotalGas * (record.value(forKey: "restGas") as! Double)
+        let unitPrice = record.value(forKey: "unitPrice") as! Double
+        
+        let gasAdd = lround(price / unitPrice)
+        
+        if indexPath.row != searchResults!.count - 1 {
+            let lastRecord = searchResults![searchResults!.count - 2 - indexPath.row]
+            let lastRestGas = kTotalGas * (lastRecord.value(forKey: "restGas") as! Double)
+            let lastPrice = lastRecord.value(forKey: "price") as! Double
+            let lastUnitPrice = lastRecord.value(forKey: "unitPrice") as! Double
+            let lastGas = lastRestGas + lastPrice / lastUnitPrice
+            let lastMileage = lastRecord.value(forKey: "mileage") as! Int
+            
+            let mileDrived = mileage - lastMileage
+            let gasUsed = lastGas - restGas
+            
+            let averageConsumption = gasUsed / Double(mileDrived) * 100
+            
+            gasAddLabel.text = "本期油耗：\(String(format: "%.2f", averageConsumption))"
+            
+        } else {
+            gasAddLabel.text = "本期油耗：-"
+        }
+        
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 66
     }
     
 
