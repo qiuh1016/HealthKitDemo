@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B93EC3161DACD892006B891B /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B93EC3141DACD891006B891B /* data.xcdatamodeld */; };
 		B93EC3181DACDB71006B891B /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EC3171DACDB71006B891B /* RecordTableViewController.swift */; };
+		B93EC31A1DAF2F83006B891B /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EC3191DAF2F83006B891B /* WheelView.swift */; };
+		B93EC31C1DAF5015006B891B /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EC31B1DAF5015006B891B /* IndicatorView.swift */; };
+		B93EC31E1DAF51F8006B891B /* WheelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EC31D1DAF51F8006B891B /* WheelViewController.swift */; };
 		B9B22EEF1DAA191300895309 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B22EEE1DAA191300895309 /* AppDelegate.swift */; };
 		B9B22EF11DAA191300895309 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B22EF01DAA191300895309 /* ViewController.swift */; };
 		B9B22EF41DAA191300895309 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B22EF21DAA191300895309 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		B93EC3151DACD892006B891B /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
 		B93EC3171DACDB71006B891B /* RecordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
+		B93EC3191DAF2F83006B891B /* WheelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
+		B93EC31B1DAF5015006B891B /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		B93EC31D1DAF51F8006B891B /* WheelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelViewController.swift; sourceTree = "<group>"; };
 		B9B22EEB1DAA191300895309 /* HealthKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B22EEE1DAA191300895309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9B22EF01DAA191300895309 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +78,10 @@
 				B9B22EF01DAA191300895309 /* ViewController.swift */,
 				B9C57D611DACBBA200B39885 /* GasViewController.swift */,
 				B93EC3171DACDB71006B891B /* RecordTableViewController.swift */,
+				B93EC31D1DAF51F8006B891B /* WheelViewController.swift */,
 				B9B22EF21DAA191300895309 /* Main.storyboard */,
+				B93EC3191DAF2F83006B891B /* WheelView.swift */,
+				B93EC31B1DAF5015006B891B /* IndicatorView.swift */,
 				B9B22F041DAA1CE000895309 /* HealthManager.swift */,
 				B9B22EF51DAA191300895309 /* Assets.xcassets */,
 				B9B22EF71DAA191300895309 /* LaunchScreen.storyboard */,
@@ -168,11 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B93EC31A1DAF2F83006B891B /* WheelView.swift in Sources */,
 				B9C57D621DACBBA200B39885 /* GasViewController.swift in Sources */,
 				B9B22EF11DAA191300895309 /* ViewController.swift in Sources */,
 				B93EC3161DACD892006B891B /* data.xcdatamodeld in Sources */,
 				B9B22F051DAA1CE000895309 /* HealthManager.swift in Sources */,
+				B93EC31E1DAF51F8006B891B /* WheelViewController.swift in Sources */,
 				B93EC3181DACDB71006B891B /* RecordTableViewController.swift in Sources */,
+				B93EC31C1DAF5015006B891B /* IndicatorView.swift in Sources */,
 				B9B22EEF1DAA191300895309 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

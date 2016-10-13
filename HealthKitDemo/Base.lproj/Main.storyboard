@@ -68,7 +68,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1465" y="837"/>
+            <point key="canvasLocation" x="-1852" y="143"/>
         </scene>
         <!--Add-->
         <scene sceneID="pCR-T8-3vF">
@@ -131,7 +131,7 @@
                                     <outletCollection property="gestureRecognizers" destination="rLg-Ce-4pQ" appends="YES" id="AnC-Cf-CCG"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bjr-Xd-xmS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="18000" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bjr-Xd-xmS">
                                 <frame key="frameInset" minX="112" minY="110" width="208" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -159,7 +159,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kL-Z7-RB0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kL-Z7-RB0">
                                 <frame key="frameInset" minX="112" minY="206" width="208" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -222,8 +222,15 @@
                             <constraint firstItem="RW3-0g-edD" firstAttribute="centerX" secondItem="1dA-Tf-S6U" secondAttribute="centerX" id="pS1-QN-VHp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add" id="Q4b-em-Yd0"/>
+                    <navigationItem key="navigationItem" title="Add" id="Q4b-em-Yd0">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="u2B-DP-FJo">
+                            <connections>
+                                <segue destination="aaa-1w-3GD" kind="show" id="WbA-tV-P2y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="dashedWheelImage" destination="uQF-FZ-FRf" id="Mg6-nm-ViV"/>
                         <outlet property="label" destination="gTR-nb-Jl9" id="I7i-2T-zuQ"/>
                         <outlet property="mileageTextField" destination="Bjr-Xd-xmS" id="oyc-mn-odI"/>
                         <outlet property="priceTextField" destination="8kL-Z7-RB0" id="diT-FQ-zbE"/>
@@ -238,7 +245,55 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-527.20000000000005" y="144.3778110944528"/>
+            <point key="canvasLocation" x="-481" y="143"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="USY-PP-fL0">
+            <objects>
+                <viewController id="aaa-1w-3GD" customClass="WheelViewController" customModule="HealthKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b0d-Sp-R6j"/>
+                        <viewControllerLayoutGuide type="bottom" id="TJV-wq-Uaj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Veq-fV-Swc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Slx-ER-zXx" customClass="WheelView" customModule="HealthKitDemo" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="4tw-3n-fp9"/>
+                                    <constraint firstAttribute="height" constant="250" id="Sp5-2n-Ay2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVg-Vr-au8" customClass="IndicatorView" customModule="HealthKitDemo" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hVg-Vr-au8" firstAttribute="centerY" secondItem="Veq-fV-Swc" secondAttribute="centerY" id="0Im-yB-Tck"/>
+                            <constraint firstItem="hVg-Vr-au8" firstAttribute="centerX" secondItem="Veq-fV-Swc" secondAttribute="centerX" id="IUL-D5-Ff2"/>
+                            <constraint firstItem="hVg-Vr-au8" firstAttribute="width" secondItem="Slx-ER-zXx" secondAttribute="width" id="iJZ-cC-EmC"/>
+                            <constraint firstItem="Slx-ER-zXx" firstAttribute="centerY" secondItem="Veq-fV-Swc" secondAttribute="centerY" id="nfH-lD-BBe"/>
+                            <constraint firstItem="Slx-ER-zXx" firstAttribute="centerX" secondItem="Veq-fV-Swc" secondAttribute="centerX" id="qeT-4C-fdB"/>
+                            <constraint firstItem="hVg-Vr-au8" firstAttribute="height" secondItem="Slx-ER-zXx" secondAttribute="height" id="rPH-ep-rt0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="4a5-55-zCB">
+                        <barButtonItem key="rightBarButtonItem" title="Rotate" id="wY1-gH-m19">
+                            <connections>
+                                <action selector="rotateButtonTapped:" destination="aaa-1w-3GD" id="EHy-jw-GqJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="indicatorView" destination="hVg-Vr-au8" id="5mh-el-J1r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ko9-Rs-LIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="-521"/>
         </scene>
         <!--Records-->
         <scene sceneID="8cV-of-N9n">
@@ -301,7 +356,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ra4-R9-HyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="252" y="143.47826086956522"/>
+            <point key="canvasLocation" x="238" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="57I-3j-eyU">
@@ -319,7 +374,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAe-5B-Eem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1466.4000000000001" y="144.3778110944528"/>
+            <point key="canvasLocation" x="-1185" y="143"/>
         </scene>
     </scenes>
     <resources>

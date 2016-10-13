@@ -16,6 +16,7 @@ class GasViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var wheelImage: UIImageView!
+    @IBOutlet weak var dashedWheelImage: UIImageView!
     
     @IBOutlet weak var mileageTextField: UITextField!
     @IBOutlet weak var unitPriceTextField: UITextField!
@@ -61,8 +62,17 @@ class GasViewController: UIViewController {
         let velocity = panGesture.velocity(in: wheelImage)
         let rotation = CGFloat(M_PI / 360 / 20) * velocity.x
         
-        if wheelRotation + rotation > 0 && wheelRotation + rotation < rotationLimited  {
+        let price = Double(priceTextField.text!)!
+        let unitPrice = Double(unitPriceTextField.text!)!
+        
+        let gasAdd = price / unitPrice
+        let persent = gasAdd / kTotalGas
+        let angle = CGFloat(persent) * rotationLimited
+        
+        
+        if wheelRotation + rotation > 0 && wheelRotation + rotation < rotationLimited{
             self.wheelImage.transform = self.wheelImage!.transform.rotated(by: rotation)
+            self.dashedWheelImage.transform = self.wheelImage.transform.rotated(by: rotation + angle)
             self.wheelRotation += rotation
         }
         
