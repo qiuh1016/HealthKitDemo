@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -223,11 +224,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="Q4b-em-Yd0">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="u2B-DP-FJo">
-                            <connections>
-                                <segue destination="aaa-1w-3GD" kind="show" id="WbA-tV-P2y"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" id="u2B-DP-FJo">
+                                <connections>
+                                    <segue destination="aaa-1w-3GD" kind="show" id="WbA-tV-P2y"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="apr-mH-pHJ">
+                                <connections>
+                                    <segue destination="TnU-GF-ZO0" kind="show" id="JHb-qs-QnZ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="dashedWheelImage" destination="uQF-FZ-FRf" id="Mg6-nm-ViV"/>
@@ -308,7 +316,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xl7-JN-wrU" id="qBm-zs-k8v">
-                                    <frame key="frameInset" width="375" height="65"/>
+                                    <frame key="frameInset" width="375" height="65.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" verticalHuggingPriority="251" text="xxx元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WB9-C9-vmn">
@@ -375,6 +383,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAe-5B-Eem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1185" y="143"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="qcj-e8-PyW">
+            <objects>
+                <viewController id="TnU-GF-ZO0" customClass="WheelViewController" customModule="HealthKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PSL-aO-Kdv"/>
+                        <viewControllerLayoutGuide type="bottom" id="a3c-nV-YrN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gnu-Kj-3Bu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGv-Ro-r9l" customClass="WheelView" customModule="HealthKitDemo" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="uch-1i-Udo"/>
+                                    <constraint firstAttribute="width" constant="250" id="wXP-rU-hwY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YD-eh-bTA" customClass="IndicatorView" customModule="HealthKitDemo" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBg-Y7-i3z" customClass="WheelView" customModule="HealthKitDemo" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="BVi-m4-YOU"/>
+                                    <constraint firstAttribute="width" constant="250" id="gwq-NM-hTo"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBt-ZQ-R6s" customClass="IndicatorView" customModule="HealthKitDemo" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="VGv-Ro-r9l" secondAttribute="leading" constant="-30" id="30d-sF-TRn"/>
+                            <constraint firstItem="rBt-ZQ-R6s" firstAttribute="height" secondItem="FBg-Y7-i3z" secondAttribute="height" id="EhW-0Y-xeD"/>
+                            <constraint firstItem="rBt-ZQ-R6s" firstAttribute="top" secondItem="PSL-aO-Kdv" secondAttribute="bottom" constant="50" id="XXc-SF-JAK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FBg-Y7-i3z" secondAttribute="trailing" constant="30" id="dCh-a6-G2g"/>
+                            <constraint firstItem="FBg-Y7-i3z" firstAttribute="top" secondItem="PSL-aO-Kdv" secondAttribute="bottom" constant="50" id="dDh-ah-FRs"/>
+                            <constraint firstItem="VGv-Ro-r9l" firstAttribute="top" secondItem="PSL-aO-Kdv" secondAttribute="bottom" constant="50" id="eE8-Xy-xh8"/>
+                            <constraint firstItem="8YD-eh-bTA" firstAttribute="width" secondItem="VGv-Ro-r9l" secondAttribute="width" id="njr-Sj-18p"/>
+                            <constraint firstItem="8YD-eh-bTA" firstAttribute="height" secondItem="VGv-Ro-r9l" secondAttribute="height" id="oLX-k8-kh9"/>
+                            <constraint firstItem="rBt-ZQ-R6s" firstAttribute="width" secondItem="FBg-Y7-i3z" secondAttribute="width" id="ogk-Ot-aV6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="8YD-eh-bTA" secondAttribute="leading" constant="-30" id="sv4-SS-TNP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rBt-ZQ-R6s" secondAttribute="trailing" constant="30" id="uJb-VF-gQg"/>
+                            <constraint firstItem="8YD-eh-bTA" firstAttribute="top" secondItem="PSL-aO-Kdv" secondAttribute="bottom" constant="50" id="uMB-jz-NeJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="e5A-rH-Sx1">
+                        <barButtonItem key="rightBarButtonItem" title="Rotate" id="ihh-zD-l1O">
+                            <connections>
+                                <action selector="rotateButtonTapped:" destination="TnU-GF-ZO0" id="OOA-lm-6Tm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="indicatorView" destination="8YD-eh-bTA" id="kWg-xd-jBR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SYF-Nf-JVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-482" y="-528"/>
         </scene>
     </scenes>
     <resources>
