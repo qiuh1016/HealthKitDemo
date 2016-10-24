@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D78AA944A40FF7D829D1D4A /* Pods_HealthKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28F6553FD7F02707E5A1E75 /* Pods_HealthKitDemo.framework */; };
+		B91855941DB745F40065602A /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91855931DB745F40065602A /* Dashboard.swift */; };
+		B91855961DB746160065602A /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91855951DB746160065602A /* PointerView.swift */; };
+		B91855981DB74AA80065602A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91855971DB74AA80065602A /* DashboardViewController.swift */; };
 		B93EC3161DACD892006B891B /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B93EC3141DACD891006B891B /* data.xcdatamodeld */; };
 		B93EC3181DACDB71006B891B /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EC3171DACDB71006B891B /* RecordTableViewController.swift */; };
 		B93EC31A1DAF2F83006B891B /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EC3191DAF2F83006B891B /* WheelView.swift */; };
 		B93EC31C1DAF5015006B891B /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EC31B1DAF5015006B891B /* IndicatorView.swift */; };
 		B93EC31E1DAF51F8006B891B /* WheelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EC31D1DAF51F8006B891B /* WheelViewController.swift */; };
+		B9686F621DBDF78D0080F245 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9686F611DBDF78D0080F245 /* MainViewController.swift */; };
+		B9686F641DBDF82A0080F245 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9686F631DBDF82A0080F245 /* Category.swift */; };
 		B9B22EEF1DAA191300895309 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B22EEE1DAA191300895309 /* AppDelegate.swift */; };
 		B9B22EF11DAA191300895309 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B22EF01DAA191300895309 /* ViewController.swift */; };
 		B9B22EF41DAA191300895309 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B22EF21DAA191300895309 /* Main.storyboard */; };
@@ -19,15 +25,24 @@
 		B9B22EF91DAA191300895309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B22EF71DAA191300895309 /* LaunchScreen.storyboard */; };
 		B9B22F051DAA1CE000895309 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B22F041DAA1CE000895309 /* HealthManager.swift */; };
 		B9B22F091DAA2ECF00895309 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B22F081DAA2ECF00895309 /* HealthKit.framework */; };
+		B9BF39091DB864670043D1AF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B9BF39081DB864670043D1AF /* Podfile */; };
 		B9C57D621DACBBA200B39885 /* GasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C57D611DACBBA200B39885 /* GasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		928D010EA38ABDF62F11F965 /* Pods-HealthKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthKitDemo/Pods-HealthKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A53838E11D4520FEA8FBBE6D /* Pods-HealthKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthKitDemo/Pods-HealthKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B28F6553FD7F02707E5A1E75 /* Pods_HealthKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91855931DB745F40065602A /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		B91855951DB746160065602A /* PointerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
+		B91855971DB74AA80065602A /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		B93EC3151DACD892006B891B /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
 		B93EC3171DACDB71006B891B /* RecordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
 		B93EC3191DAF2F83006B891B /* WheelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 		B93EC31B1DAF5015006B891B /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		B93EC31D1DAF51F8006B891B /* WheelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelViewController.swift; sourceTree = "<group>"; };
+		B9686F611DBDF78D0080F245 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B9686F631DBDF82A0080F245 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B9B22EEB1DAA191300895309 /* HealthKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B22EEE1DAA191300895309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9B22EF01DAA191300895309 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +53,7 @@
 		B9B22F001DAA193E00895309 /* HealthKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitDemo.entitlements; sourceTree = "<group>"; };
 		B9B22F041DAA1CE000895309 /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		B9B22F081DAA2ECF00895309 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B9BF39081DB864670043D1AF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B9C57D611DACBBA200B39885 /* GasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,18 +63,76 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9B22F091DAA2ECF00895309 /* HealthKit.framework in Frameworks */,
+				4D78AA944A40FF7D829D1D4A /* Pods_HealthKitDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E7C162BC9CC2C87F4DFC9F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				928D010EA38ABDF62F11F965 /* Pods-HealthKitDemo.debug.xcconfig */,
+				A53838E11D4520FEA8FBBE6D /* Pods-HealthKitDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B9686F5D1DBDF6F20080F245 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B9686F611DBDF78D0080F245 /* MainViewController.swift */,
+				B93EC3171DACDB71006B891B /* RecordTableViewController.swift */,
+				B9B22EF01DAA191300895309 /* ViewController.swift */,
+				B9C57D611DACBBA200B39885 /* GasViewController.swift */,
+				B93EC31D1DAF51F8006B891B /* WheelViewController.swift */,
+				B91855971DB74AA80065602A /* DashboardViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		B9686F5E1DBDF7090080F245 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				B91855931DB745F40065602A /* Dashboard.swift */,
+				B91855951DB746160065602A /* PointerView.swift */,
+				B93EC3191DAF2F83006B891B /* WheelView.swift */,
+				B93EC31B1DAF5015006B891B /* IndicatorView.swift */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		B9686F5F1DBDF7300080F245 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B9B22EF21DAA191300895309 /* Main.storyboard */,
+				B9B22EF71DAA191300895309 /* LaunchScreen.storyboard */,
+				B9B22EF51DAA191300895309 /* Assets.xcassets */,
+				B9B22EFA1DAA191300895309 /* Info.plist */,
+				B93EC3141DACD891006B891B /* data.xcdatamodeld */,
+				B9BF39081DB864670043D1AF /* Podfile */,
+				B9B22F001DAA193E00895309 /* HealthKitDemo.entitlements */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		B9686F601DBDF76D0080F245 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B9B22F041DAA1CE000895309 /* HealthManager.swift */,
+				B9686F631DBDF82A0080F245 /* Category.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		B9B22EE21DAA191300895309 = {
 			isa = PBXGroup;
 			children = (
 				B9B22EED1DAA191300895309 /* HealthKitDemo */,
 				B9B22EEC1DAA191300895309 /* Products */,
 				B9B22F011DAA193E00895309 /* Frameworks */,
+				9E7C162BC9CC2C87F4DFC9F1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,20 +147,11 @@
 		B9B22EED1DAA191300895309 /* HealthKitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B9B22F001DAA193E00895309 /* HealthKitDemo.entitlements */,
 				B9B22EEE1DAA191300895309 /* AppDelegate.swift */,
-				B9B22EF01DAA191300895309 /* ViewController.swift */,
-				B9C57D611DACBBA200B39885 /* GasViewController.swift */,
-				B93EC3171DACDB71006B891B /* RecordTableViewController.swift */,
-				B93EC31D1DAF51F8006B891B /* WheelViewController.swift */,
-				B9B22EF21DAA191300895309 /* Main.storyboard */,
-				B93EC3191DAF2F83006B891B /* WheelView.swift */,
-				B93EC31B1DAF5015006B891B /* IndicatorView.swift */,
-				B9B22F041DAA1CE000895309 /* HealthManager.swift */,
-				B9B22EF51DAA191300895309 /* Assets.xcassets */,
-				B9B22EF71DAA191300895309 /* LaunchScreen.storyboard */,
-				B9B22EFA1DAA191300895309 /* Info.plist */,
-				B93EC3141DACD891006B891B /* data.xcdatamodeld */,
+				B9686F5D1DBDF6F20080F245 /* ViewController */,
+				B9686F5E1DBDF7090080F245 /* CustomView */,
+				B9686F601DBDF76D0080F245 /* Utils */,
+				B9686F5F1DBDF7300080F245 /* Source */,
 			);
 			path = HealthKitDemo;
 			sourceTree = "<group>";
@@ -95,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				B9B22F081DAA2ECF00895309 /* HealthKit.framework */,
+				B28F6553FD7F02707E5A1E75 /* Pods_HealthKitDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9B22EFD1DAA191300895309 /* Build configuration list for PBXNativeTarget "HealthKitDemo" */;
 			buildPhases = (
+				7B5C88CA1085D68481EB8341 /* [CP] Check Pods Manifest.lock */,
 				B9B22EE71DAA191300895309 /* Sources */,
 				B9B22EE81DAA191300895309 /* Frameworks */,
 				B9B22EE91DAA191300895309 /* Resources */,
+				F5F03131C87004CF1B637802 /* [CP] Embed Pods Frameworks */,
+				688A3B7C5EB8B3167675413F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,11 +235,60 @@
 			files = (
 				B9B22EF91DAA191300895309 /* LaunchScreen.storyboard in Resources */,
 				B9B22EF61DAA191300895309 /* Assets.xcassets in Resources */,
+				B9BF39091DB864670043D1AF /* Podfile in Resources */,
 				B9B22EF41DAA191300895309 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		688A3B7C5EB8B3167675413F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthKitDemo/Pods-HealthKitDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B5C88CA1085D68481EB8341 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5F03131C87004CF1B637802 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthKitDemo/Pods-HealthKitDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9B22EE71DAA191300895309 /* Sources */ = {
@@ -178,14 +296,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B93EC31A1DAF2F83006B891B /* WheelView.swift in Sources */,
+				B9686F621DBDF78D0080F245 /* MainViewController.swift in Sources */,
 				B9C57D621DACBBA200B39885 /* GasViewController.swift in Sources */,
+				B91855941DB745F40065602A /* Dashboard.swift in Sources */,
 				B9B22EF11DAA191300895309 /* ViewController.swift in Sources */,
 				B93EC3161DACD892006B891B /* data.xcdatamodeld in Sources */,
 				B9B22F051DAA1CE000895309 /* HealthManager.swift in Sources */,
+				B91855961DB746160065602A /* PointerView.swift in Sources */,
+				B91855981DB74AA80065602A /* DashboardViewController.swift in Sources */,
 				B93EC31E1DAF51F8006B891B /* WheelViewController.swift in Sources */,
 				B93EC3181DACDB71006B891B /* RecordTableViewController.swift in Sources */,
 				B93EC31C1DAF5015006B891B /* IndicatorView.swift in Sources */,
 				B9B22EEF1DAA191300895309 /* AppDelegate.swift in Sources */,
+				B9686F641DBDF82A0080F245 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +427,7 @@
 		};
 		B9B22EFE1DAA191300895309 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 928D010EA38ABDF62F11F965 /* Pods-HealthKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HealthKitDemo/HealthKitDemo.entitlements;
@@ -321,6 +445,7 @@
 		};
 		B9B22EFF1DAA191300895309 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A53838E11D4520FEA8FBBE6D /* Pods-HealthKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HealthKitDemo/HealthKitDemo.entitlements;

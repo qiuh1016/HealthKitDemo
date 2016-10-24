@@ -12,6 +12,8 @@ import CoreData
 class RecordTableViewController: UITableViewController {
     
     var searchResults: [NSManagedObject]?
+    
+    var index: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,17 @@ class RecordTableViewController: UITableViewController {
         do {
             searchResults = try getContext().fetch(fetchRequest) as? [NSManagedObject]
             print("numbers of \(searchResults?.count)")
-            return searchResults
+            var usefullResults = [NSManagedObject]()
+            
+            if let searchResults = searchResults {
+                for result in searchResults {
+                    if result.value(forKey: "category") as! Int == index {
+                        usefullResults.append(result)
+                    }
+                }
+            }
+            searchResults = usefullResults
+            return usefullResults //return searchResults
         } catch  {
             print(error)
             return nil
@@ -87,9 +99,9 @@ class RecordTableViewController: UITableViewController {
         mileageLabel.text = "\(mileage)km"
         
         let restGas = kTotalGas * (record.value(forKey: "restGas") as! Double)
-        let unitPrice = record.value(forKey: "unitPrice") as! Double
+        //let unitPrice = record.value(forKey: "unitPrice") as! Double
         
-        let gasAdd = lround(price / unitPrice)
+        //let gasAdd = lround(price / unitPrice)
         
         if indexPath.row != searchResults!.count - 1 {
             let lastRecord = searchResults![searchResults!.count - 2 - indexPath.row]
