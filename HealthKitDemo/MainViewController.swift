@@ -40,7 +40,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell?.textLabel?.text = categoryCN[indexPath.row] //category[indexPath.row].uppercased()
         cell?.textLabel?.textColor = UIColor.darkGray
         
-        cell?.imageView?.image = UIImage(named: images[indexPath.row])
+//        cell?.imageView?.image = UIImage(named: images[indexPath.row])
         return cell!
     }
     
